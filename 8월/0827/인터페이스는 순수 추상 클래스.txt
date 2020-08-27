@@ -1,0 +1,24 @@
+public abstract class Loggerbase {
+    public abstract void log(String message);
+}
+
+public final class ConsoleLogger extends LoggerBase {
+    public void log(String message){
+        System.out.println(message);
+    }
+}
+
+ConsoleLogger logger = new ConsoleLogger();
+program.processData(data, logger);
+
+public void processData(byte[] data, LoggerBase logger){
+    if(data[0] != 'P' || data[1] != 'O'){
+        logger.log("wrong file signature");
+        return;
+    }
+}
+
+public abstract class LoggerBase {
+    public abstract void log(String message);
+    // 필요할 경우 추상 메서드 추가~
+}
