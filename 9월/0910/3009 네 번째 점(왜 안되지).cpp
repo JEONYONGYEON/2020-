@@ -10,7 +10,7 @@ int main(void)
 	
 	for(int i = 0; i < 3; i++)
 	{
-		scanf("%d %d", &one, &two);
+		scanf("%d %d", &x[i], &y[i]);
 		x[one]++;
 		y[two]++;
 	}
@@ -19,13 +19,11 @@ int main(void)
 	{
 		if(x[j] == 1)
 		indexX = j;
+		
+		if(y[j] == 1)
+		indexY = j;
 	}
 	
-	for(int k = 1; k <= 1000; k++)
-	{
-		if(y[k] == 1)
-		indexY = k;
-	}
 
 	printf("%d %d", indexX, indexY);
 	return 0;
