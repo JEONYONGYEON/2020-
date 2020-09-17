@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main(void)
 {
 	int N, cnt = 0;
@@ -10,19 +11,24 @@ int main(void)
 	{
 		scanf("%d", &arr[i]);
 		
-		cnt++;
+		bool bPrime = true;
 		if(arr[i] == 1)
 		{
-			cnt--;
+			bPrime = false;
 		}
 		
-		for(int j = 2; j * j < arr[i]; j++)
+		for(int j = 2; j * j <= arr[i]; ++j)
 		{
 			if(arr[i] % j == 0)
 			{
-				cnt--;
+				bPrime = false;
 				break;
 			}
+		}
+	
+		if(bPrime)
+		{
+			cnt++;
 		}
 	}
 	
